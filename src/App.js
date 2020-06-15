@@ -1,24 +1,18 @@
+  
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Main from './containers/main'
+import Second from './containers/second'
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route path="/" component={(routerProps) => <Main {...routerProps} />} />
+        <Route path="/second" component={(routerProps) => <Second {...routerProps} />} />
+        <Route render={() => <Redirect to="/" />} />
+      </Switch>
     </div>
   );
 }
