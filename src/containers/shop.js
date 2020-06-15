@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-export default function Second() {
+function Shop() {
     return (
         <div>
-            <h1>Second Page</h1>
+            <h1>Shop Page</h1>
         </div>
     )
 }
+
+export default Shop;
