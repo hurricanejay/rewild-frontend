@@ -1,9 +1,7 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PlantCard from '../components/plantCard'
 import { connect } from 'react-redux';
 import { getPlantsActionCreator } from '../action/actionCreator'
-
-
 
 function Main(props) {
     // const [plantData, setPlantData] = useState([]);

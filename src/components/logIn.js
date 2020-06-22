@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
+import { connect } from 'react-redux';
+import { loginActionCreater } from '../action/actionCreator'
 
-function Login() {
+function Login(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log('submit', username, password)
+        props.login(username, password)
     }
 
     return (
@@ -28,4 +30,16 @@ function Login() {
     )
 }
 
-export default Login;
+const msp = state => {
+    return {
+        user: state.user
+    }
+}
+
+const mdp = (dispatch) => {
+    return {
+        login: (username, password) => dispatch(loginActionCreater(username, password))
+    }
+}
+
+export default connect(msp, mdp)(Login)
