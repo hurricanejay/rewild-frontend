@@ -12,6 +12,8 @@ export const getPlantsActionCreator = () => {
     }
 }
 
+
+
 export const setUserCreator = user => ({ type: 'SETUSER', user })
 export const loginActionCreater = (username, password) => {
     return dispatch => {
@@ -25,3 +27,4 @@ export const loginActionCreater = (username, password) => {
             })
     }
 }
+

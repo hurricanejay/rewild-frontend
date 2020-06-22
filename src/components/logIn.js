@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux';
 import { loginActionCreater } from '../action/actionCreator'
+import {Redirect} from 'react-router-dom';
 
 function Login(props) {
     const [username, setUsername] = useState('');
@@ -13,7 +14,8 @@ function Login(props) {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
+            {props.user ? <Redirect to='/shop' /> :
+                <form onSubmit={onSubmit}>
                 <input type="text" placeholder="Username"
                     name="username"
                     value={username}
@@ -26,6 +28,7 @@ function Login(props) {
                     Submit
                 </button>
             </form>
+}
         </div>
     )
 }

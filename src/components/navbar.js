@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setUserCreator } from '../action/actionCreator'
 
 class Navbar extends Component {
   render() {
@@ -14,9 +16,12 @@ class Navbar extends Component {
             <li className="nav-item active">
               <a className="nav-link" href="/shop">Shop <span className="sr-only">(current)</span></a>
             </li>
+            {this.props.user ? <li className="nav-item">
+              <a className="nav-link" href='#' onClick={this.props.logout}>Log Out</a>
+            </li> :
             <li className="nav-item">
               <a className="nav-link" href="/logIn">Log In</a>
-            </li>
+            </li>}
             <li className="nav-item">
               <a className="nav-link" href="/signUp">Sign Up</a>
             </li>
@@ -27,4 +32,17 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+
+const msp = state => {
+    return {
+        user: state.user
+    }
+}
+
+const mdp = (dispatch) => {
+    return {
+        logout: () => dispatch(setUserCreator(null))
+    }
+}
+
+export default connect(msp, mdp)(Navbar)
