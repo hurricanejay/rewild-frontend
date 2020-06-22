@@ -1,37 +1,16 @@
-import React, { Component, useState, useEffect } from 'react';
-import PlantCard from '../components/plantCard'
-import { connect } from 'react-redux';
-import { getPlantsActionCreator } from '../action/actionCreator'
-import navbar from '../components/navbar'
+import React, { Component } from 'react';
 
-function Main(props) {
-    // const [plantData, setPlantData] = useState([]);
-
-    useEffect(() => {
-        props.getPlants()
-    }, [])
-
+function Shop() {
     return (
         <div>
-            <h1>MAIN PAGE</h1>
-            <div class='image-rows'>
+            <h1>Welcome to Plantify</h1>
 
-            {props.plants.map(plant => <PlantCard key={plant.id} plant={plant} />)}
-            </div>
+
+<h2>Helping plant owners keep your plants alive and well </h2>
+<br></br>
+<h3>Shop Favorites</h3>
         </div>
     )
 }
 
-const msp = state => {
-    return {
-        plants: state.plants
-    }
-}
-
-const mdp = (dispatch) => {
-    return {
-        getPlants: () => dispatch(getPlantsActionCreator())
-    }
-}
-
-export default connect(msp, mdp)(Main)
+export default Shop;

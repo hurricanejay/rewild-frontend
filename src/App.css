@@ -39,13 +39,15 @@
 
 .plant-card {
   width: 300px;
-  color: red
-  
+  color: green;
+  /* border: 1px solid blue; */
+  padding: 10px;
+  /* margin: auto; */
 }
 
 .image{
   width: 300px;
-
+  
 
 }
 
@@ -53,4 +55,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+}
+
+.navbar {
+  
 }
