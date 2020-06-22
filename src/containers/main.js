@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import PlantCard from '../components/plantCard'
 import { connect } from 'react-redux';
 import { getPlantsActionCreator } from '../action/actionCreator'
+import navbar from '../components/navbar'
 
 function Main(props) {
     // const [plantData, setPlantData] = useState([]);
