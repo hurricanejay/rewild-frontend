@@ -10,7 +10,7 @@ function Main() {
         .then(data => {
             setPlantData(data)
         })
-    })
+    }, [])
 
     return (
         <div>
