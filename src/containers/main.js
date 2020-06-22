@@ -1,29 +1,23 @@
-import React, { Component } from "react";
-import PlantCard from "../components/PlantCard.js";
-import { useEffect, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
+import PlantCard from '../components/plantCard'
 
-class Main extends React.Component {
-  state = {
-    plants: []
-  };
+function Main() {
+    const [plantData, setPlantData] = useState([]);
 
-  componentDidMount() {
-    fetch("http://localhost:3000/plants")
-      .then(response => response.json())
-      .then(plants => this.setState({ plants }));
-  }
+    useEffect(() => {
+        fetch('http://localhost:3000/plants')
+        .then(resp => resp.json())
+        .then(data => {
+            setPlantData(data)
+        })
+    })
 
-  render() {
     return (
-      <div>
-        <h1>MAIN PAGE</h1>
-        <h2>Plants</h2>
-        {this.state.plants.map(plant => {
-          return <PlantCard plant={plant} />;
-        })}
-      </div>
-    );
-  }
+        <div>
+            <h1>MAIN PAGE</h1>
+            {plantData.map(plant => <PlantCard plant={plant} />)}
+        </div>
+    )
 }
 
 export default Main;
