@@ -1,7 +1,8 @@
 import React from 'react';
 
-function PlantCard(plant) {
-    const {name, image, price, frequency, amount, light} = plant;
+function PlantCard(props) {
+    console.log(props, 'props??')
+    const {name, image, price, description, frequency, amount, light} = props.plant;
     return(
         <div>
             <h3>{name}</h3>
