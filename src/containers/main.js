@@ -13,7 +13,10 @@ function Main(props) {
     return (
         <div>
             <h1>MAIN PAGE</h1>
+            <div class='image-rows'>
+
             {props.plants.map(plant => <PlantCard key={plant.id} plant={plant} />)}
+            </div>
         </div>
     )
 }

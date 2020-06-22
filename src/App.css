@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.plant-card {
+  width: 300px;
+  color: red
+  
+}
+
+.image{
+  width: 300px;
+
+
+}
+
+.image-rows{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
