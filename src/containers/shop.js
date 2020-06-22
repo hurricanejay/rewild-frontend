@@ -15,7 +15,7 @@ function Main(props) {
     return (
         <div>
             <h1>SHOP ALL</h1>
-            <div class='image-rows'>
+            <div className='image-rows'>
 
             {props.plants.map(plant => <PlantCard key={plant.id} plant={plant} />)}
             </div>

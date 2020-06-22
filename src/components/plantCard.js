@@ -4,13 +4,13 @@ function PlantCard(props) {
     const {name, image, price, description, frequency, amount, light} = props.plant;
     return(
         <div>
-        <div class='plant-card'>
+        <div className='plant-card'>
             <h4>{name}</h4>
             <p>Water me every {frequency} days</p>
             <p>{amount}</p>
             <p>Preferred Light: {light}</p>
             <p>A Little About Me: {description}</p>
-            <img class='image' src={image} alt='plant'/>
+            <img className='image' src={image} alt='plant'/>
             <p>${price}</p>
             <button>Add To Cart</button> 
         </div>
