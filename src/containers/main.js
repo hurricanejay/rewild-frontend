@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getTopThreePlantsActionCreator } from '../action/actionCreator'
+import { getTopThreePlantsActionCreator, setTopThreePlantsActionCreator } from '../action/actionCreator'
 import PlantCard from '../components/plantCard'
 import { connect } from 'react-redux';
 
@@ -7,6 +7,9 @@ function Main(props) {
     useEffect(() => {
         if(!props.top_three || props.top_three.length === 0)
             props.getTopThreePlants()
+        return () => {
+            props.setTopThreePlantsActionCreator([])
+        }
     }, [props])
 
     return (
@@ -33,7 +36,8 @@ const msp = state => {
 
 const mdp = (dispatch) => {
     return {
-        getTopThreePlants: () => dispatch(getTopThreePlantsActionCreator())
+        getTopThreePlants: () => dispatch(getTopThreePlantsActionCreator()),
+        setTopThreePlantsActionCreator: () => setTopThreePlantsActionCreator()
     }
 }
 
