@@ -18,7 +18,7 @@ function App(props) {
         <Route exact path="/shop" component={(routerProps) => <Shop {...routerProps} />} />
         <Route exact path="/login" component={(routerProps) => <Login {...routerProps} />} />
         <Route exact path="/signup" component={(routerProps) => <Signup {...routerProps} />} />
-        <Route exact path="/plants" component={(routerProps) => <PlantInfo {...routerProps} />} />
+        <Route exact path="/plants/:id" component={(routerProps) => <PlantInfo {...routerProps} />} />
         <Route render={() => <Redirect to="/" />} />
       </Switch>
     </div>

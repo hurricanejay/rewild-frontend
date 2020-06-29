@@ -1,37 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { API_ROOT, HEADERS } from '../constants'
+import { useLocation } from 'react-router-dom'
+import { API_ROOT } from '../constants'
 
-function PlantInfo(props) {
-
-    const [plant, setPlant] = useState(null);
+function PlantInfo() {
+  const [plant, setPlant] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
-    console.log("use effect?");
+    const fetchPlantInfo = () => {
+      fetch(`${API_ROOT}${location.pathname}`)
+        .then(res => res.json())
+        .then(plantInfo => {
+          setPlant(plantInfo)
+        });
+    };
+
     if (!plant) {
       fetchPlantInfo();
     }
-  }, [plant]);
+  }, [plant, location]);
 
-  const fetchPlantInfo = () => {
-    fetch(`${API_ROOT}/plants`)
-      .then(res => res.json())
-      .then(plantInfo => {
-        setPlant(plantInfo)
-      });
-  };
-
-//   const {name, amount, frequency, light, image, description, price} = plant
   return (
-
-
-    <div className="plant-card">
-      <h4>{plant.name}</h4>
-      <p>Water me every {plant.frequency} days</p>
-      <p>{plant.amount}</p>
-      <p>Preferred Light: {plant.light}</p>
-      <p>A Little About Me: {plant.description}</p>
-      <img className="image" src={plant.image} alt="plant" />
-      <p>${plant.price}</p>
+    <div className="plant-info">
+      <h4>{plant && plant.name}</h4>
+      <p>Water me every {plant && plant.frequency} days</p>
+      <p>{plant && plant.amount}</p>
+      <p>Preferred Light: {plant && plant.light}</p>
+      <p>A Little About Me: {plant && plant.description}</p>
+      <img className="image" src={plant && plant.image} alt="plant" />
+      <p>${plant && plant.price}</p>
       <button>Add To Cart</button>
     </div>
   );

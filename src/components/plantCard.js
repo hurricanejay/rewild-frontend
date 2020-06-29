@@ -1,10 +1,10 @@
 import React from 'react';
 
 function PlantCard(props) {
-    const {name, image, price} = props.plant;
+    const {name, image, price, id} = props.plant;
     
     const moreInfo = () => {
-        props.history.push('/plants')
+        props.history.push(`/plants/${id}`)
     }
     
     return(

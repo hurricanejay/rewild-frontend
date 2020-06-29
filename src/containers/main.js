@@ -21,7 +21,7 @@ function Main(props) {
             <h3>Shop Favorites</h3>
             
             <div className='top_three'>
-            {props.top_three.map(plant => <PlantCard key={plant.id} plant={plant} />)}
+            {props.top_three.map(plant => <PlantCard key={plant.id} plant={plant} history={props.history} />)}
             </div>
 
         </div>
