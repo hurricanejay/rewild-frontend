@@ -28,3 +28,13 @@ export const loginActionCreater = (username, password) => {
     }
 }
 
+export const setTopThreePlantsActionCreator = top_three => ({ type: 'SETTOPTHREE', top_three })
+export const getTopThreePlantsActionCreator = () => {
+    return dispatch => {
+        fetch(`${API_ROOT}/plants/top_three`)
+            .then(res => res.json())
+            .then(plants => {
+                dispatch(setTopThreePlantsActionCreator(plants))
+            })
+    }
+}

@@ -3,7 +3,7 @@ import PlantCard from '../components/plantCard'
 import { connect } from 'react-redux';
 import { getPlantsActionCreator } from '../action/actionCreator'
 
-function Main(props) {
+function Shop(props) {
     // const [plantData, setPlantData] = useState([]);
 
     useEffect(() => {
@@ -33,4 +33,4 @@ const mdp = (dispatch) => {
     }
 }
 
-export default connect(msp, mdp)(Main)
+export default connect(msp, mdp)(Shop)

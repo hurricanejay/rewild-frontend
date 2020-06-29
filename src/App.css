@@ -51,11 +51,10 @@
 
 }
 
-.image-rows{
+.image-rows, .top_three {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
 .navbar {
