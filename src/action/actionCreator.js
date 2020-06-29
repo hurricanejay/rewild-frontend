@@ -28,6 +28,20 @@ export const loginActionCreater = (username, password) => {
     }
 }
 
+
+export const signupActionCreater = (username, password, email) => {
+    return dispatch => {
+        fetch(`${API_ROOT}/users`, {
+            method: 'POST',
+            headers: HEADERS,
+            body: JSON.stringify({ username, password, email })
+        }).then(res => res.json())
+            .then(user => {
+                dispatch(setUserCreator(user))
+            })
+    }
+}
+
 export const setTopThreePlantsActionCreator = top_three => ({ type: 'SETTOPTHREE', top_three })
 export const getTopThreePlantsActionCreator = () => {
     return dispatch => {
