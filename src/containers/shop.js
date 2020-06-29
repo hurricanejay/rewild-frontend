@@ -13,7 +13,7 @@ function Shop(props) {
         <div>
             <h1>SHOP ALL</h1>
             <div className='image-rows'>
-                {props.plants.map(plant => <PlantCard key={plant.id} plant={plant} />)}
+                {props.plants.map(plant => <PlantCard key={plant.id} plant={plant} history={props.history} />)}
             </div>
         </div>
     )
