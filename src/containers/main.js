@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 
 function Main(props) {
     useEffect(() => {
-        props.getTopThreePlants()
-    }, [])
+        if(!props.top_three || props.top_three.length === 0)
+            props.getTopThreePlants()
+    }, [props])
 
     return (
         <div >

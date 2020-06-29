@@ -5,8 +5,9 @@ import { getPlantsActionCreator } from '../action/actionCreator'
 
 function Shop(props) {
     useEffect(() => {
-        props.getPlants()
-    }, [])
+        if(!props.plants || props.plants.length === 0)
+            props.getPlants()
+    }, [props])
 
     return (
         <div>
