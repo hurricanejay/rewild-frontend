@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { getPlantsActionCreator } from '../action/actionCreator'
 
 function Shop(props) {
-    // const [plantData, setPlantData] = useState([]);
-
     useEffect(() => {
         props.getPlants()
     }, [])
@@ -14,8 +12,7 @@ function Shop(props) {
         <div>
             <h1>SHOP ALL</h1>
             <div className='image-rows'>
-
-            {props.plants.map(plant => <PlantCard key={plant.id} plant={plant} />)}
+                {props.plants.map(plant => <PlantCard key={plant.id} plant={plant} />)}
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-  
+
 import { API_ROOT, HEADERS } from '../constants'
 
 export const setPlantsActionCreator = plants => ({ type: 'SETPLANTS', plants })
@@ -11,8 +11,6 @@ export const getPlantsActionCreator = () => {
             })
     }
 }
-
-
 
 export const setUserCreator = user => ({ type: 'SETUSER', user })
 export const loginActionCreater = (username, password) => {
@@ -28,13 +26,12 @@ export const loginActionCreater = (username, password) => {
     }
 }
 
-
-export const signupActionCreater = (username, password, email) => {
+export const signupActionCreater = (user) => {
     return dispatch => {
         fetch(`${API_ROOT}/users`, {
             method: 'POST',
             headers: HEADERS,
-            body: JSON.stringify({ username, password, email })
+            body: JSON.stringify({user: user})
         }).then(res => res.json())
             .then(user => {
                 dispatch(setUserCreator(user))
