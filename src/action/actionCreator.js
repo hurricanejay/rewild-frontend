@@ -31,7 +31,7 @@ export const signupActionCreater = (user) => {
         fetch(`${API_ROOT}/users`, {
             method: 'POST',
             headers: HEADERS,
-            body: JSON.stringify({user: user})
+            body: JSON.stringify({ user: user })
         }).then(res => res.json())
             .then(user => {
                 dispatch(setUserCreator(user))
@@ -39,20 +39,21 @@ export const signupActionCreater = (user) => {
     }
 }
 
-export const createWatering = (userPlantId, date) => {
+export const createWatering = (userPlantId, date, userId) => {
     return dispatch => {
         fetch(`${API_ROOT}/user_plants/watering/${userPlantId}`, {
             method: 'POST',
             headers: HEADERS,
-            body: JSON.stringify({date: date})
-        })
+            body: JSON.stringify({ date: date })
+        }).then(res => res.json())
+            .then(() => {
+                dispatch(getMyPlants(userId))
+            })
     }
 }
 
 export const setMyPlants = (myPlants) => ({ type: 'SETMYPLANTS', myPlants })
 export const getMyPlants = (userId) => {
-
-    console.log(userId)
     return dispatch => {
         fetch(`${API_ROOT}/user_plants/my_plants/${userId}`)
             .then(res => res.json())

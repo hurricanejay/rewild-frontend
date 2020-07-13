@@ -17,7 +17,7 @@ function MyPlants(props) {
   return (
     <div className="my-plants"> 
     My Plants
-    {props.myPlants && props.myPlants.map(userPlant => <Plants userPlant={userPlant}/>)}
+    {props.myPlants && props.myPlants.map(userPlant => <Plants key={userPlant.id} userPlant={userPlant}/>)}
     </div>
   );
 }
