@@ -22,6 +22,7 @@ function Plant(props) {
         <div className='plant' >
             <h4>{name}</h4>
             <img className='image' src={image} alt='plant' />
+            <p>Select Most Recent Date</p>
             <input type='date' value={date} onChange={(event) => handleChange(event)} />
             <input type="submit" value="Submit" onClick={(event) => handleSubmit(event)} />
             <p></p>
