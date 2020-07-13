@@ -39,6 +39,16 @@ export const signupActionCreater = (user) => {
     }
 }
 
+export const createWatering = (userPlantId, date) => {
+    return dispatch => {
+        fetch(`${API_ROOT}/user_plants/watering/${userPlantId}`, {
+            method: 'POST',
+            headers: HEADERS,
+            body: JSON.stringify({date: date})
+        })
+    }
+}
+
 export const setMyPlants = (myPlants) => ({ type: 'SETMYPLANTS', myPlants })
 export const getMyPlants = (userId) => {
 
