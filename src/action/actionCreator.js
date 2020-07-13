@@ -39,7 +39,21 @@ export const signupActionCreater = (user) => {
     }
 }
 
-export const setTopThreePlantsActionCreator = top_three => ({ type: 'SETTOPTHREE', top_three })
+export const setMyPlants = (myPlants) => ({ type: 'SETMYPLANTS', myPlants })
+export const getMyPlants = (userId) => {
+
+    console.log(userId)
+    return dispatch => {
+        fetch(`${API_ROOT}/user_plants/my_plants/${userId}`)
+            .then(res => res.json())
+            .then(userPlants => {
+                dispatch(setMyPlants(userPlants))
+            })
+    }
+}
+
+
+export const setTopThreePlantsActionCreator = topThree => ({ type: 'SETTOPTHREE', topThree })
 export const getTopThreePlantsActionCreator = () => {
     return dispatch => {
         fetch(`${API_ROOT}/plants/top_three`)

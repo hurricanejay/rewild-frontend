@@ -1,6 +1,7 @@
 let initialState = {
-    top_three: [],
+    topThree: [],
     plants: [],
+    myPlants: [],
     user: null
 }
 
@@ -11,7 +12,9 @@ const reducer = (prevState = initialState, action) => {
         case 'SETUSER':
             return {...prevState, user: action.user}
         case 'SETTOPTHREE':
-            return {...prevState, top_three: action.top_three}    
+            return {...prevState, topThree: action.topThree}    
+        case 'SETMYPLANTS':
+            return {...prevState, myPlants: action.myPlants}
         default:
             return prevState
     }

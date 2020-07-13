@@ -17,6 +17,9 @@ class Navbar extends Component {
             <li className="nav-item active">
               <Link className="nav-link" to="/shop">Shop</Link>
             </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/my_plants">My Plants</Link>
+            </li>
             {this.props.user ? <li className="nav-item">
               <Link className="nav-link" to='#' onClick={this.props.logout}>Log Out</Link>
             </li> :
@@ -27,6 +30,7 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link className="nav-link" to="/signUp">Sign Up</Link>
             </li>}
+   
           </ul>
         </div>
       </nav>

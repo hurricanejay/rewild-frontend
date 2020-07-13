@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 function Main(props) {
     useEffect(() => {
-        if(!props.top_three || props.top_three.length === 0)
+        if(!props.topThree || props.topThree.length === 0)
             props.getTopThreePlants()
         return () => {
             props.setTopThreePlantsActionCreator([])
@@ -20,8 +20,8 @@ function Main(props) {
             <br></br>
             <h3>Shop Favorites</h3>
             
-            <div className='top_three'>
-            {props.top_three.map(plant => <PlantCard key={plant.id} plant={plant} history={props.history} />)}
+            <div className='topThree'>
+            {props.topThree.map(plant => <PlantCard key={plant.id} plant={plant} history={props.history} />)}
             </div>
 
         </div>
@@ -30,7 +30,7 @@ function Main(props) {
 
 const msp = state => {
     return {
-        top_three: state.top_three
+        topThree: state.topThree
     }
 }
 
