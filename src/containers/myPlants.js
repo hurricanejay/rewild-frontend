@@ -5,12 +5,11 @@ import Plants from '../components/plant'
 
 function MyPlants(props) {
 
-  const { getMyPlants } = props;
+  const { getMyPlants, user } = props;
 
   useEffect(() => {
-    console.log(props.user ? props.user.id : null);
-    getMyPlants(props.user ? props.user.id : null)
-  }, [getMyPlants]);
+    getMyPlants(user ? user.id : null)
+  }, [getMyPlants, user]);
 
 
 
