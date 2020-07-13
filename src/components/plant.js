@@ -26,7 +26,7 @@ function Plant(props) {
             <input type="submit" value="Submit" onClick={(event) => handleSubmit(event)} />
             <p></p>
             <p>Last Watering Date:
-                {waterings && waterings.length > 0 && waterings[waterings.length - 1] && `${new Date(waterings[waterings.length - 1].date).getUTCMonth()}/${new Date(waterings[waterings.length - 1].date).getUTCDate()}/${new Date(waterings[waterings.length - 1].date).getUTCFullYear()}`}
+                {waterings && waterings.length > 0 && waterings[waterings.length - 1] && `${new Date(waterings[waterings.length - 1].date).getUTCMonth() + 1}/${new Date(waterings[waterings.length - 1].date).getUTCDate()}/${new Date(waterings[waterings.length - 1].date).getUTCFullYear()}`}
             </p>
             <p>Next Watering Date:</p>
         </div>
