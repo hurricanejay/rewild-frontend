@@ -8,7 +8,7 @@ function Search(props) {
   const onClickSearch = (event) => {
     event.preventDefault();
     // history.push(`/search/${search}`)
-    props.routeTo(search)
+    props.onClick(search)
   }
 
   return (

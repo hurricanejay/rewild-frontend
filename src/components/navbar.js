@@ -37,7 +37,7 @@ function Navbar(props) {
               <Link className="nav-link" to="/signUp">Sign Up</Link>
             </li>}
         </ul>
-        <Search routeTo={routeToSearch} />
+        <Search onClick={routeToSearch} />
       </div>
     </nav>
   )
