@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { connect } from 'react-redux'
-import { getSearchPlants } from '../action/actionCreator'
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 function Search(props) {
@@ -32,16 +30,4 @@ function Search(props) {
   );
 }
 
-const msp = state => {
-  return {
-    searchPlants: state.searchPlants
-  }
-}
-
-const mdp = dispatch => {
-  return {
-    getSearchPlants: (searchInput) => dispatch(getSearchPlants(searchInput))
-  }
-}
-
-export default connect(msp, mdp)(Search);
+export default Search;
