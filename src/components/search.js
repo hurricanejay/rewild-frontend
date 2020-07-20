@@ -20,10 +20,10 @@ function Search(props) {
         value={search}
         onChange={(event) => setSearch(event.target.value)}
       />
-      <button 
-      className="btn btn-outline-success my-2 my-sm-0" 
-      onClick={onClickSearch}
-      type="submit">
+      <button
+        className="btn btn-outline-success my-2 my-sm-0"
+        onClick={onClickSearch}
+        type="submit">
         Search
       </button>
     </form>
@@ -31,15 +31,15 @@ function Search(props) {
 }
 
 const msp = state => {
-    return {
-        searchPlants: state.searchPlants
-    }
+  return {
+    searchPlants: state.searchPlants
+  }
 }
 
 const mdp = dispatch => {
-    return {
-        getSearchPlants: (searchInput) => dispatch(getSearchPlants(searchInput))
-    }
+  return {
+    getSearchPlants: (searchInput) => dispatch(getSearchPlants(searchInput))
+  }
 }
 
 export default connect(msp, mdp)(Search);

@@ -24,18 +24,15 @@ class Navbar extends Component {
             {this.props.user ? <li className="nav-item">
               <Link className="nav-link" to='#' onClick={this.props.logout}>Log Out</Link>
             </li> :
-            <li className="nav-item">
-              <Link className="nav-link" to="/logIn">Log In</Link>
-            </li>}
-            { !this.props.user &&
-            <li className="nav-item">
-              <Link className="nav-link" to="/signUp">Sign Up</Link>
-            </li>}
-              
+              <li className="nav-item">
+                <Link className="nav-link" to="/logIn">Log In</Link>
+              </li>}
+            {!this.props.user &&
+              <li className="nav-item">
+                <Link className="nav-link" to="/signUp">Sign Up</Link>
+              </li>}
           </ul>
-          <Search  />
-      
-
+          <Search />
         </div>
       </nav>
     )
@@ -44,15 +41,15 @@ class Navbar extends Component {
 
 
 const msp = state => {
-    return {
-        user: state.user
-    }
+  return {
+    user: state.user
+  }
 }
 
 const mdp = (dispatch) => {
-    return {
-        logout: () => dispatch(setUserCreator(null))
-    }
+  return {
+    logout: () => dispatch(setUserCreator(null))
+  }
 }
 
 export default connect(msp, mdp)(Navbar)
