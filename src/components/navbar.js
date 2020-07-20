@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { setUserCreator } from '../action/actionCreator'
+import Search from './search'
 
 class Navbar extends Component {
   render() {
@@ -30,8 +31,11 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link className="nav-link" to="/signUp">Sign Up</Link>
             </li>}
-   
+              
           </ul>
+          <Search  />
+      
+
         </div>
       </nav>
     )
