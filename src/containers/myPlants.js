@@ -6,14 +6,14 @@ import Search from "../components/search";
 
 function MyPlants(props) {
   const { getMyPlants, user, myPlants } = props;
-  const [ userPlants, setUserPlants ] = useState(null)
+  const [ filteredPlants, setfilteredPlants ] = useState(null)
 
   useEffect(() => {
     getMyPlants(user ? user.id : null)
-  }, [getMyPlants, user, myPlants]);
+  }, [getMyPlants, user]);
 
   const search = (input) => {
-    setUserPlants(myPlants.filter(userPlant => {
+    setfilteredPlants(myPlants.filter(userPlant => {
       return userPlant.plant.name.includes(input)
     }))
   }
@@ -22,7 +22,7 @@ function MyPlants(props) {
     <div className="my-plants">
       My Plants
       <Search onClick={search} />
-      {userPlants ? userPlants.map(userPlant => <Plants key={userPlant.id} userPlant={userPlant} />) : myPlants.map(userPlant => <Plants key={userPlant.id} userPlant={userPlant} />)}
+      {filteredPlants ? filteredPlants.map(userPlant => <Plants key={userPlant.id} userPlant={userPlant} />) : myPlants.map(userPlant => <Plants key={userPlant.id} userPlant={userPlant} />)}
     </div>
   );
 }

@@ -24,7 +24,7 @@ function PlantInfo() {
     <div className="plant-info">
       <h4>{plant && plant.name}</h4>
       <p>Water me every {plant && plant.frequency} days</p>
-      <p>{plant && plant.amount}</p>
+      <p>Watering Amount: {plant && plant.amount}</p>
       <p>Preferred Light: {plant && plant.light}</p>
       <p>A Little About Me: {plant && plant.description}</p>
       <img className="image" src={plant && plant.image} alt="plant" />
