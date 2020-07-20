@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 function Search(props) {
   const [search, setSearch] = useState("");
-  const history = useHistory()
+  // const history = useHistory()
 
   const onClickSearch = (event) => {
     event.preventDefault();
-    history.push(`/search/${search}`)
+    // history.push(`/search/${search}`)
+    props.routeTo(search)
   }
 
   return (
