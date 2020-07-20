@@ -74,3 +74,14 @@ export const getTopThreePlantsActionCreator = () => {
             })
     }
 }
+
+export const setSearchPlants = (searchPlants) => ({ type: 'SETSEARCHPLANTS', searchPlants})
+export const getSearchPlants = (searchInput) => {
+    return dispatch => {
+        fetch(`${API_ROOT}/plants/search/${searchInput}`)
+            .then(res => res.json())
+            .then(plants => {
+                dispatch(setSearchPlants(plants))
+            })
+    }
+}
