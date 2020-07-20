@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { getSearchPlants } from '../action/actionCreator'
+import { useHistory } from "react-router-dom";
 
 function Search(props) {
   const [search, setSearch] = useState("");
+  const history = useHistory()
 
   const onClickSearch = (event) => {
     event.preventDefault();
-    props.getSearchPlants(search)
+    history.push(`/search/${search}`)
   }
 
   return (
