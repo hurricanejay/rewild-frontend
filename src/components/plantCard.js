@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function PlantCard(props) {
+
+   const [showButton, setShowButton]  = useState(false)
+
     const {name, image, price, id} = props.plant;
     
     const moreInfo = () => {
@@ -11,9 +14,13 @@ function PlantCard(props) {
         <div className='plant-card' onClick={() => moreInfo()} >
 
             <h4>{name}</h4>
-            <img  className='image' src={image} alt='plant'/>
+            <img  className='image' src={image} 
+            onMouseEnter={()=>setShowButton(true)} 
+            onMouseLeave={()=>setShowButton(false)}
+            alt='plant'/>
             <p>${price}</p>
-            <button>Add To Cart</button> 
+
+            {showButton && <button id='cart-btn'>Add To Cart</button> }
         </div>
 
 
