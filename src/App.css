@@ -38,15 +38,18 @@
 }
 
 .plant-card {
-  width: 300px;
   color: green;
   padding: 10px;
-  margin: auto;
+  position: relative;
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 400px;
 }
 
 .image{
-  width: 300px;
-
+  display: block;
+  position: relative;
+  width: 100%;
 }
 
 .image-rows, .topThree {
@@ -67,4 +70,6 @@
 
 #cart-btn{
   position: absolute;
+  left: 50%;
+  top: 50%;
 }
