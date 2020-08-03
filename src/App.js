@@ -10,6 +10,7 @@ import Signup from './components/signup';
 import PlantInfo from './components/plantInfo'
 import MyPlants from './containers/myPlants'
 import SearchResults from './containers/searchResults';
+import Cart from './containers/cart'
 
 function App(props) {
 
@@ -24,6 +25,7 @@ function App(props) {
         <Route exact path="/signup" component={(routerProps) => <Signup {...routerProps} />} />
         <Route exact path="/plants/:id" component={(routerProps) => <PlantInfo {...routerProps} />} />
         <Route exact path="/my_plants" component={(routerProps) => <MyPlants {...routerProps} />} />
+        <Route exact path="/cart" component={(routerProps) => <Cart {...routerProps} />} />
         <Route exact path="/search/:search" component={(routerProps) => <SearchResults {...routerProps} />} />
         <Route render={() => <Redirect to="/" />} />
       </Switch>
