@@ -36,6 +36,9 @@ function Navbar(props) {
             <li className="nav-item">
               <Link className="nav-link" to="/signUp">Sign Up</Link>
             </li>}
+            <li className='nav-item'><i class="fas fa-shopping-cart fa-lg" ></i>
+
+</li>
         </ul>
         <Search onClick={routeToSearch} />
       </div>

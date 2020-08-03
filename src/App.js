@@ -10,7 +10,7 @@ import Signup from './components/signup';
 import PlantInfo from './components/plantInfo'
 import MyPlants from './containers/myPlants'
 import SearchResults from './containers/searchResults';
-import PaymentForm from './components/paymentForm';
+import PaymentForm from './components/PaymentForm';
 
 function App(props) {
 

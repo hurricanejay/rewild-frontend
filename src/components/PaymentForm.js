@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 const styles = {
   name: {
     verticalAlign: 'top',
